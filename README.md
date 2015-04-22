@@ -1,2 +1,3 @@
-# js-minifier
-JavaScript minifier.
+## JavaScript Minification
+
+JavaScript minifier (i.e., compressor).
