@@ -1,0 +1,2 @@
+# js-minifier
+JavaScript minifier.
