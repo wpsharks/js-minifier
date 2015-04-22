@@ -40,7 +40,7 @@
 
 	"autoload"         : {
 		"psr-4": {
-			"WebSharks\\JsMinifier": "includes/classes/"
+			"WebSharks\\JsMinifier\\": "includes/classes/"
 		}
 	},
 
