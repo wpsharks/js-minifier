@@ -37,11 +37,11 @@
 
     "autoload": {
         "psr-4": {
-            "WebSharks\\JsMinifier\\": "src/includes/classes/"
+            "WebSharks\\JsMinifier\\": "src/includes/classes"
         }
     },
 
     "config": {
-        "vendor-dir": "src/includes/vendor"
+        "vendor-dir": "src/vendor"
     }
 }

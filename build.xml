@@ -3,14 +3,15 @@
 <project name="Project" default="build">
 
   <basename property="project_basename" file="${project.basedir}" suffix="" />
-  <property name="build_dir" value="${project.basedir}/.~build" />
+
+  <property name="build_dir" value="${project.basedir}/src/.~build" />
 
   <property name="phar_file" value="${build_dir}/websharks-${project_basename}.phar" />
   <property name="phar_stub_file" value="${project.basedir}/src/phar-stub.php" />
 
   <property name="composer_path" value="/usr/bin/env composer" />
   <property name="composer_lock" value="${project.basedir}/composer.lock" />
-  <property name="vendor_dir" value="${project.basedir}/src/includes/vendor" />
+  <property name="vendor_dir" value="${project.basedir}/src/vendor" />
 
   <target name="preamble">
     <echo msg="OS: ${os.name}" />
@@ -55,8 +56,10 @@
     <echo msg="Creating PHAR file..." />
     <pharpackage basedir="${project.basedir}/src" stub="${phar_stub_file}" destfile="${phar_file}">
       <fileset dir="${project.basedir}/src">
+        <exclude name="**/vendor/bin/**" />
         <exclude name="**/phar-stub.php" />
         <exclude name="**/build.xml" />
+        <exclude name="**/.~build/**" />
         <exclude name="**/composer.json" />
         <exclude name="**/composer.lock" />
       </fileset>
