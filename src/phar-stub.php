@@ -7,5 +7,5 @@
 namespace WebSharks\JsMinifier;
 
 \Phar::mapPhar('websharks-js-minifier.phar');
-require_once 'phar://websharks-js-minifier.phar/vendor/autoload.php';
+require_once 'phar://websharks-js-minifier.phar/src/vendor/autoload.php';
 __HALT_COMPILER();
