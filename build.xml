@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<project name="JS Minifier" default="build">
+<project name="Project" default="build">
 
+  <basename property="project_basename" file="${project.basedir}" suffix="" />
   <property name="build_dir" value="${project.basedir}/.~build" />
 
-  <property name="phar_file" value="${build_dir}/websharks-js-minifier.phar" />
+  <property name="phar_file" value="${build_dir}/websharks-${project_basename}.phar" />
   <property name="phar_stub_file" value="${project.basedir}/src/phar-stub.php" />
 
   <property name="composer_path" value="/usr/bin/env composer" />
@@ -19,6 +20,7 @@
     <echo msg="Phing version: ${phing.version}" />
     <echo msg="------------------------------------" />
     <echo msg="Project: ${phing.project.name}" />
+    <echo msg="Project basename: ${project_basename}" />
     <echo msg="Base directory: ${project.basedir}" />
     <echo msg="------------------------------------" />
   </target>
@@ -42,7 +44,7 @@
     <delete file="${composer_lock}" quiet="true" />
     <echo msg="------------------------------------" />
     <echo msg="Running Composer..." />
-    <exec command="${composer_path} install" dir="${project.basedir}" checkreturn="true" />
+    <exec command="${composer_path} install" dir="${project.basedir}" passthru="true" checkreturn="true" />
     <echo msg="------------------------------------" />
   </target>
 
@@ -53,7 +55,10 @@
     <echo msg="Creating PHAR file..." />
     <pharpackage basedir="${project.basedir}/src" stub="${phar_stub_file}" destfile="${phar_file}">
       <fileset dir="${project.basedir}/src">
-        <exclude name="phar-stub.php" />
+        <exclude name="**/phar-stub.php" />
+        <exclude name="**/build.xml" />
+        <exclude name="**/composer.json" />
+        <exclude name="**/composer.lock" />
       </fileset>
     </pharpackage>
     <echo msg="------------------------------------" />
