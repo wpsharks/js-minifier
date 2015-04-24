@@ -1,15 +1,11 @@
 <?php
 /**
- * HTML Compressor Stub.
+ * PHAR Stub.
  *
- * @since 150421 Improving PHAR support.
- *
- * @author JasWSInc <https://github.com/jaswsinc>
- * @copyright WebSharks, Inc. <http://www.websharks-inc.com>
- * @license GNU General Public License, version 2
+ * @since 150424 Initial release.
  */
-namespace WebSharks\Core;
+namespace WebSharks\JsMinifier;
 
-\Phar::mapPhar('websharks-core.phar');
-require_once 'phar://websharks-core.phar/stub.php';
+\Phar::mapPhar('websharks-js-minifier.phar');
+require_once 'phar://websharks-js-minifier.phar/stub.php';
 __HALT_COMPILER();
