@@ -4,6 +4,8 @@ namespace WebSharks\JsMinifier;
 /**
  * JS Minifier class by WebSharks™.
  *
+ * @since 150424 Initial release.
+ *
  * Original JSMin copyright: {@link http://www.crockford.com/javascript/jsmin.html Douglas Crockford}.
  * Original PHP port copyright: {@link http://github.com/rgrove/jsmin-php/ Ryan Grove}.
  * Enhancements copyright: {@link http://code.google.com/p/minify/ Andrea Giammarchi}.
@@ -30,6 +32,8 @@ class Core
     /**
      * Class constructor.
      *
+     * @since 150424 Initial release.
+     *
      * @param string $input Uncompressed JS.
      */
     public function __construct($input)
@@ -39,6 +43,8 @@ class Core
 
     /**
      * Minify (Compress) Javascript.
+     *
+     * @since 150424 Initial release.
      *
      * @param string $js Javascript to be minified
      *
@@ -59,6 +65,8 @@ class Core
 
     /**
      * Perform minification (compression).
+     *
+     * @since 150424 Initial release.
      *
      * @return string Output string; compressed JS.
      */
@@ -106,6 +114,8 @@ class Core
 
     /**
      * Action handler.
+     *
+     * @since 150424 Initial release.
      *
      * ACTION_KEEP_A = Output A. Copy B to A. Get the next B.
      * ACTION_DELETE_A = Copy B to A. Get the next B.
@@ -181,6 +191,8 @@ class Core
     /**
      * Utility conditional check.
      *
+     * @since 150424 Initial release.
+     *
      * @return bool `TRUE` if is regex literal.
      */
     protected function isRegexpLiteral()
@@ -209,6 +221,8 @@ class Core
     /**
      * Get next character.
      *
+     * @since 150424 Initial release.
+     *
      * @return string|null Next char.
      */
     protected function get()
@@ -235,6 +249,8 @@ class Core
     /**
      * Get next character.
      *
+     * @since 150424 Initial release.
+     *
      * @return string Next char.
      */
     protected function peek()
@@ -247,6 +263,8 @@ class Core
     /**
      * Letter, digit, underscore, dollar sign, escape, or non-ASCII?
      *
+     * @since 150424 Initial release.
+     *
      * @param string $c Input character to test.
      *
      * @return bool `TRUE` if letter, digit, underscore, dollar sign, escape, or non-ASCII?
@@ -258,6 +276,8 @@ class Core
 
     /**
      * Single-line comment handler.
+     *
+     * @since 150424 Initial release.
      *
      * @return string Single-line comment.
      */
@@ -279,6 +299,8 @@ class Core
 
     /**
      * Multi-line comment handler.
+     *
+     * @since 150424 Initial release.
      *
      * @throws Exception On failre.
      *
@@ -312,6 +334,8 @@ class Core
     /**
      * Get the next character, skipping over comments.
      *      Some comments may be preserved.
+     *
+     * @since 150424 Initial release.
      *
      * @return string Next character (or comment).
      */
