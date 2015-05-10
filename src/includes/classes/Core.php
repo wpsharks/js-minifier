@@ -2,7 +2,7 @@
 namespace WebSharks\JsMinifier;
 
 /**
- * JS Minifier class by WebSharks™.
+ * JS Minifier.
  *
  * @since 150424 Initial release.
  *
@@ -10,7 +10,7 @@ namespace WebSharks\JsMinifier;
  * Original PHP port copyright: {@link http://github.com/rgrove/jsmin-php/ Ryan Grove}.
  * Enhancements copyright: {@link http://code.google.com/p/minify/ Andrea Giammarchi}.
  * Enhancements copyright: {@link http://code.google.com/p/minify/ Steve Clay}.
- * Modified by: {@link http://www.websharks-inc.com WebSharks™}.
+ * Modified by: {@link http://websharks-inc.com/ Jason @ WebSharks, Inc.}.
  */
 class Core
 {
@@ -53,7 +53,6 @@ class Core
     public static function compress($js)
     {
         $js = (string) $js;
-
         try {
             $js_minifier = new static($js);
             $minified_js = $js_minifier->min();
@@ -150,7 +149,7 @@ class Core
                             break;
                         }
                         if (ord($this->a) <= self::ORD_LF) {
-                            throw new Exception('Unterminated String at byte: '.$this->inputIndex.': '.$str);
+                            throw new \Exception('Unterminated String at byte: '.$this->inputIndex.': '.$str);
                         }
                         $str .= $this->a;
                         if ($this->a === '\\') {
@@ -178,7 +177,7 @@ class Core
                             $this->a       = $this->get();
                             $pattern      .= $this->a;
                         } elseif (ord($this->a) <= self::ORD_LF) {
-                            throw new Exception('Unterminated RegExp at byte: '.$this->inputIndex.': '.$pattern);
+                            throw new \Exception('Unterminated RegExp at byte: '.$this->inputIndex.': '.$pattern);
                         }
                         $this->output .= $this->a;
                         $this->lastByteOut = $this->a;
@@ -324,7 +323,7 @@ class Core
                     return ' ';
                 }
             } elseif ($get === null) {
-                throw new Exception('Unterminated comment at byte: '.$this->inputIndex.': /*'.$comment);
+                throw new \Exception('Unterminated comment at byte: '.$this->inputIndex.': /*'.$comment);
             }
             $comment .= $get;
         }
