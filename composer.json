@@ -42,6 +42,7 @@
     },
 
     "config": {
-        "vendor-dir": "src/vendor"
+        "vendor-dir": "src/vendor",
+        "preferred-install": "dist"
     }
 }
