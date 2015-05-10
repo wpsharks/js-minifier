@@ -43,5 +43,12 @@
 
     "config": {
         "vendor-dir": "src/vendor"
+    },
+
+    "archive": {
+        "exclude": [
+            "/assets",
+            "/tests"
+        ]
     }
 }
